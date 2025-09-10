@@ -54,11 +54,11 @@ O sistema tem como objetivo gerenciar consultas médicas, permitindo o cadastro 
 ---
 
 ## 📂 Estrutura do Repositório
-/docs/mer.png # Diagrama MER
-/src/Projeto.Api
-└── Entities/
-├── Paciente.cs
-├── Medico.cs
-├── Especialidade.cs
-└── Consulta.cs
-README.md
+- /docs/mer.png # Diagrama MER
+- /src/Projeto.Api
+- └── Entities/
+- ├── Paciente.cs
+- ├── Medico.cs
+- ├── Especialidade.cs
+- └── Consulta.cs
+- README.md
