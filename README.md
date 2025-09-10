@@ -46,19 +46,3 @@ O sistema tem como objetivo gerenciar consultas médicas, permitindo o cadastro 
 
 ---
 
-## 🔗 Relacionamentos
-- **Paciente 1:N Consulta** → um paciente pode ter várias consultas.  
-- **Médico 1:N Consulta** → um médico pode realizar várias consultas.  
-- **Especialidade 1:N Consulta** → uma consulta está vinculada a uma especialidade.  
-
----
-
-## 📂 Estrutura do Repositório
-- /docs/mer.png # Diagrama MER
-- /src/Projeto.Api
-- └── Entities/
-- ├── Paciente.cs
-- ├── Medico.cs
-- ├── Especialidade.cs
-- └── Consulta.cs
-- README.md
