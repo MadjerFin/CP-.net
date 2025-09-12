@@ -1,9 +1,9 @@
 # 📌 CP1 — Modelo Entidade-Relacionamento (MER) e Projeto WebAPI
 
 ## 👥 Integrantes
-- Amanda — RM XXXXX  
+- Amanda — RM 560066  
 - Bruno — RM XXXXX  
-- Madjer — RM XXXXX  
+- Madjer — RM 560716  
 
 ---
 
