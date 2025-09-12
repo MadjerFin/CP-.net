@@ -2,7 +2,7 @@
 
 ## 👥 Integrantes
 - Amanda — RM 560066  
-- Bruno — RM XXXXX  
+- Bruno — RM 560242  
 - Madjer — RM 560716  
 
 ---
