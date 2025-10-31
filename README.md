@@ -1,6 +1,6 @@
 # CP2 - Advanced Business Development with .NET - 2025
 
-Este projeto faz parte do CP2 da disciplina Advanced Business Development with .NET e tem como objetivo criar uma API RESTful, usando .NET 9 e banco de dados Oracle, aplicando Clean Architecture e Domain-Driven Design (DDD), com foco em solucionar um desafio real de agendamento de consultas médicas.
+Este projeto faz parte do CP2 da disciplina Advanced Business Development with .NET e tem como objetivo criar uma API RESTful, usando .NET 8 e banco de dados Oracle, aplicando Clean Architecture e Domain-Driven Design (DDD), com foco em solucionar um desafio real de agendamento de consultas médicas.
 
 ---
 
@@ -31,7 +31,7 @@ O sistema tem como objetivo gerenciar consultas médicas de forma eficiente, per
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **.NET 9.0** - Framework principal
+* **.NET 8.0** - Framework principal
 * **ASP.NET Core** - Para criação da API RESTful
 * **Entity Framework Core 8.0** - ORM para acesso a dados
 * **Oracle Database** - Banco de dados (via Oracle.EntityFrameworkCore)
@@ -119,7 +119,7 @@ Para mais detalhes, consulte o arquivo `SWAGGER.md` na raiz do projeto.
 
 ### Pré-requisitos
 
-* .NET 9.0 SDK instalado
+* .NET 8.0 SDK instalado
 * Oracle Database instalado e configurado
 * Visual Studio 2022 ou VS Code (opcional)
 
@@ -347,7 +347,7 @@ O projeto segue os princípios de Clean Architecture com separação clara em ca
 * ⚠️ Configure a connection string antes de executar
 * ⚠️ Execute as migrations antes de usar a API
 * ⚠️ Nunca commite senhas ou dados sensíveis
-* ✅ O projeto usa .NET 9.0 (atualizado do .NET 8.0)
+* ✅ O projeto usa .NET 8.0 conforme requisitos do CP2
 * ✅ Swagger/OpenAPI está funcional e documentado
 
 ---
