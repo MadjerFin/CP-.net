@@ -27,8 +27,24 @@ builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddScoped<IPacienteService, PacienteService>();
 builder.Services.AddScoped<IConsultaService, ConsultaService>();
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// Configurar Swagger/OpenAPI
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddOpenApi(options =>
+{
+    options.AddDocument(new()
+    {
+        Info = new()
+        {
+            Title = "API de Agendamento de Consultas Médicas",
+            Version = "v1",
+            Description = "API RESTful para gerenciamento de consultas médicas, pacientes, médicos e especialidades.",
+            Contact = new()
+            {
+                Name = "Equipe de Desenvolvimento",
+            }
+        }
+    });
+});
 
 var app = builder.Build();
 
