@@ -23,6 +23,10 @@ builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 builder.Services.AddValidatorsFromAssemblyContaining<CreatePacienteDtoValidator>();
 builder.Services.AddFluentValidationAutoValidation();
 
+// Registrar Services
+builder.Services.AddScoped<IPacienteService, PacienteService>();
+builder.Services.AddScoped<IConsultaService, ConsultaService>();
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
