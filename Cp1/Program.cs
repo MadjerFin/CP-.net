@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Cp1.Infrastructure.Data;
+using Cp1.Application.Mappings;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseOracle(
         builder.Configuration.GetConnectionString("DefaultConnection"),
         oracleOptions => oracleOptions.UseOracleSQLCompatibility("11")));
+
+// Configurar AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
