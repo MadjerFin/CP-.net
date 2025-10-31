@@ -4,18 +4,6 @@
         <name>Cp1</name>
     </assembly>
     <members>
-        <member name="T:Cp1.Migrations.InitialCreate">
-            <inheritdoc />
-        </member>
-        <member name="M:Cp1.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Cp1.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Cp1.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
         <member name="M:Cp1.Presentation.Controllers.ConsultasController.GetAll">
             <summary>
             Lista todas as consultas
@@ -137,6 +125,18 @@
             <response code="204">Paciente excluído com sucesso</response>
             <response code="400">Não é possível excluir paciente com consultas</response>
             <response code="404">Paciente não encontrado</response>
+        </member>
+        <member name="T:Cp1.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:Cp1.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cp1.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cp1.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
         </member>
     </members>
 </doc>
