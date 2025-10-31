@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Oracle.EntityFrameworkCore;
 using Cp1.Domain.Entities;
 
 namespace Cp1.Infrastructure.Data;
@@ -24,7 +25,7 @@ public class ApplicationDbContext : DbContext
         {
             entity.ToTable("PACIENTES");
             entity.HasKey(p => p.Id);
-            entity.Property(p => p.Id).HasColumnName("ID").UseOracleIdentityColumn();
+            entity.Property(p => p.Id).HasColumnName("ID").ValueGeneratedOnAdd();
             entity.Property(p => p.Nome).HasColumnName("NOME").HasMaxLength(100).IsRequired();
             entity.Property(p => p.DataNascimento).HasColumnName("DATA_NASCIMENTO").IsRequired();
             entity.Property(p => p.Cpf).HasColumnName("CPF").HasMaxLength(11).IsRequired();
@@ -40,7 +41,7 @@ public class ApplicationDbContext : DbContext
         {
             entity.ToTable("MEDICOS");
             entity.HasKey(m => m.Id);
-            entity.Property(m => m.Id).HasColumnName("ID").UseOracleIdentityColumn();
+            entity.Property(m => m.Id).HasColumnName("ID").ValueGeneratedOnAdd();
             entity.Property(m => m.Nome).HasColumnName("NOME").HasMaxLength(100).IsRequired();
             entity.Property(m => m.Crm).HasColumnName("CRM").HasMaxLength(20).IsRequired();
             entity.Property(m => m.Telefone).HasColumnName("TELEFONE").HasMaxLength(20);
@@ -55,7 +56,7 @@ public class ApplicationDbContext : DbContext
         {
             entity.ToTable("ESPECIALIDADES");
             entity.HasKey(e => e.Id);
-            entity.Property(e => e.Id).HasColumnName("ID").UseOracleIdentityColumn();
+            entity.Property(e => e.Id).HasColumnName("ID").ValueGeneratedOnAdd();
             entity.Property(e => e.Nome).HasColumnName("NOME").HasMaxLength(100).IsRequired();
             entity.Property(e => e.Descricao).HasColumnName("DESCRICAO").HasMaxLength(500);
             
@@ -68,7 +69,7 @@ public class ApplicationDbContext : DbContext
         {
             entity.ToTable("CONSULTAS");
             entity.HasKey(c => c.Id);
-            entity.Property(c => c.Id).HasColumnName("ID").UseOracleIdentityColumn();
+            entity.Property(c => c.Id).HasColumnName("ID").ValueGeneratedOnAdd();
             entity.Property(c => c.DataHora).HasColumnName("DATA_HORA").IsRequired();
             entity.Property(c => c.Status).HasColumnName("STATUS").HasMaxLength(1).IsRequired();
             entity.Property(c => c.Observacoes).HasColumnName("OBSERVACOES").HasMaxLength(1000);

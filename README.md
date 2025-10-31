@@ -179,6 +179,80 @@ dotnet run
 
 ---
 
+## 🗄️ Dados Necessários para Testes
+
+### ⚠️ Importante: Criar Médico e Especialidade no Banco
+
+Para criar consultas via API, você **precisa ter** no banco de dados:
+- ✅ Um **Paciente** (pode ser criado via API: `POST /api/pacientes`)
+- ⚠️ Um **Médico** (precisa ser criado diretamente no banco - SQL abaixo)
+- ⚠️ Uma **Especialidade** (precisa ser criada diretamente no banco - SQL abaixo)
+
+**Nota:** Os controllers de Médico e Especialidade podem ser implementados posteriormente conforme necessidade. Para testes da funcionalidade principal (Consultas), os dados podem ser inseridos diretamente no banco.
+
+### Script SQL para Criar Dados de Teste
+
+Execute os seguintes comandos SQL no seu banco Oracle:
+
+```sql
+-- Criar Médico de teste
+INSERT INTO MEDICOS (NOME, CRM, TELEFONE, EMAIL) 
+VALUES ('Dr. Carlos Silva', '123456', '(11) 99999-8888', 'carlos.silva@email.com');
+
+-- Criar Especialidade de teste
+INSERT INTO ESPECIALIDADES (NOME, DESCRICAO) 
+VALUES ('Cardiologia', 'Especialidade médica que trata doenças do coração e sistema circulatório');
+
+-- ⚠️ IMPORTANTE: Fazer COMMIT para salvar as alterações no banco
+COMMIT;
+
+-- Verificar os IDs criados (use estes IDs ao criar consultas)
+SELECT ID, NOME, CRM FROM MEDICOS;
+SELECT ID, NOME FROM ESPECIALIDADES;
+```
+
+**⚠️ IMPORTANTE:** No Oracle, você **DEVE** fazer `COMMIT` após inserir dados. Sem o COMMIT, as alterações não ficam visíveis para outras conexões (incluindo a API).
+
+**Como usar os IDs:**
+
+Depois de executar o SQL acima, você terá:
+- Médico com ID (exemplo: ID = 1)
+- Especialidade com ID (exemplo: ID = 1)
+
+Use esses IDs ao criar uma consulta:
+
+```json
+{
+  "dataHora": "2025-11-20T14:30:00",
+  "observacoes": "Primeira consulta",
+  "pacienteId": 1,      // ID do paciente criado via API
+  "medicoId": 1,        // ID do médico criado no banco
+  "especialidadeId": 1  // ID da especialidade criada no banco
+}
+```
+
+### Exemplo Completo de Fluxo de Teste
+
+1. **Criar Paciente via API:**
+   ```
+   POST http://localhost:5277/api/pacientes
+   Body: { "nome": "João Silva", "cpf": "12345678909", "dataNascimento": "1990-01-01T00:00:00" }
+   ```
+
+2. **Criar Médico e Especialidade no banco** (SQL acima)
+
+3. **Verificar IDs criados** (consultar no banco)
+
+4. **Criar Consulta via API:**
+   ```
+   POST http://localhost:5277/api/consultas
+   Body: { "dataHora": "2025-11-20T14:30:00", "pacienteId": 1, "medicoId": 1, "especialidadeId": 1 }
+   ```
+
+Para mais exemplos e detalhes, consulte o arquivo `TESTES_API.md`.
+
+---
+
 ## 🏗️ Arquitetura Aplicada
 
 ### Clean Architecture

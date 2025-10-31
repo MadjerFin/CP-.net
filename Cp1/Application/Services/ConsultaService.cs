@@ -43,18 +43,18 @@ public class ConsultaService : IConsultaService
     public async Task<ConsultaDto> CreateAsync(CreateConsultaDto createDto)
     {
         // Verificar se paciente existe
-        var pacienteExiste = await _context.Pacientes.AnyAsync(p => p.Id == createDto.PacienteId);
-        if (!pacienteExiste)
+        var paciente = await _context.Pacientes.FirstOrDefaultAsync(p => p.Id == createDto.PacienteId);
+        if (paciente == null)
             throw new ArgumentException("Paciente não encontrado.");
 
         // Verificar se médico existe
-        var medicoExiste = await _context.Medicos.AnyAsync(m => m.Id == createDto.MedicoId);
-        if (!medicoExiste)
+        var medico = await _context.Medicos.FirstOrDefaultAsync(m => m.Id == createDto.MedicoId);
+        if (medico == null)
             throw new ArgumentException("Médico não encontrado.");
 
         // Verificar se especialidade existe
-        var especialidadeExiste = await _context.Especialidades.AnyAsync(e => e.Id == createDto.EspecialidadeId);
-        if (!especialidadeExiste)
+        var especialidade = await _context.Especialidades.FirstOrDefaultAsync(e => e.Id == createDto.EspecialidadeId);
+        if (especialidade == null)
             throw new ArgumentException("Especialidade não encontrada.");
 
         var consulta = _mapper.Map<Consulta>(createDto);
@@ -86,18 +86,18 @@ public class ConsultaService : IConsultaService
             return null;
 
         // Verificar se paciente existe
-        var pacienteExiste = await _context.Pacientes.AnyAsync(p => p.Id == updateDto.PacienteId);
-        if (!pacienteExiste)
+        var paciente = await _context.Pacientes.FirstOrDefaultAsync(p => p.Id == updateDto.PacienteId);
+        if (paciente == null)
             throw new ArgumentException("Paciente não encontrado.");
 
         // Verificar se médico existe
-        var medicoExiste = await _context.Medicos.AnyAsync(m => m.Id == updateDto.MedicoId);
-        if (!medicoExiste)
+        var medico = await _context.Medicos.FirstOrDefaultAsync(m => m.Id == updateDto.MedicoId);
+        if (medico == null)
             throw new ArgumentException("Médico não encontrado.");
 
         // Verificar se especialidade existe
-        var especialidadeExiste = await _context.Especialidades.AnyAsync(e => e.Id == updateDto.EspecialidadeId);
-        if (!especialidadeExiste)
+        var especialidade = await _context.Especialidades.FirstOrDefaultAsync(e => e.Id == updateDto.EspecialidadeId);
+        if (especialidade == null)
             throw new ArgumentException("Especialidade não encontrada.");
 
         _mapper.Map(updateDto, consulta);

@@ -61,8 +61,8 @@ public class PacienteService : IPacienteService
             return false;
 
         // Verificar se há consultas relacionadas
-        var temConsultas = await _context.Consultas.AnyAsync(c => c.PacienteId == id);
-        if (temConsultas)
+        var quantidadeConsultas = await _context.Consultas.CountAsync(c => c.PacienteId == id);
+        if (quantidadeConsultas > 0)
             throw new InvalidOperationException("Não é possível excluir um paciente que possui consultas agendadas.");
 
         _context.Pacientes.Remove(paciente);

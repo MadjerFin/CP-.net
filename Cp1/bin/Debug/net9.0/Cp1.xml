@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cp1</name>
+    </assembly>
+    <members>
+        <member name="T:Cp1.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:Cp1.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cp1.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cp1.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.ConsultasController.GetAll">
+            <summary>
+            Lista todas as consultas
+            </summary>
+            <returns>Lista de consultas</returns>
+            <response code="200">Retorna a lista de consultas</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.ConsultasController.GetById(System.Int32)">
+            <summary>
+            Busca uma consulta por ID
+            </summary>
+            <param name="id">ID da consulta</param>
+            <returns>Dados da consulta</returns>
+            <response code="200">Retorna a consulta encontrada</response>
+            <response code="404">Consulta não encontrada</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.ConsultasController.Create(Cp1.Application.DTOs.CreateConsultaDto)">
+            <summary>
+            Cria uma nova consulta
+            </summary>
+            <param name="createDto">Dados da consulta</param>
+            <returns>Consulta criada</returns>
+            <response code="201">Consulta criada com sucesso</response>
+            <response code="400">Dados inválidos</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.ConsultasController.Update(System.Int32,Cp1.Application.DTOs.UpdateConsultaDto)">
+            <summary>
+            Atualiza uma consulta existente
+            </summary>
+            <param name="id">ID da consulta</param>
+            <param name="updateDto">Dados atualizados da consulta</param>
+            <returns>Consulta atualizada</returns>
+            <response code="200">Consulta atualizada com sucesso</response>
+            <response code="400">Dados inválidos</response>
+            <response code="404">Consulta não encontrada</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.ConsultasController.Delete(System.Int32)">
+            <summary>
+            Exclui uma consulta
+            </summary>
+            <param name="id">ID da consulta</param>
+            <returns>Sem conteúdo</returns>
+            <response code="204">Consulta excluída com sucesso</response>
+            <response code="404">Consulta não encontrada</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.ConsultasController.Cancelar(System.Int32)">
+            <summary>
+            Cancela uma consulta agendada
+            </summary>
+            <param name="id">ID da consulta</param>
+            <returns>Consulta cancelada</returns>
+            <response code="200">Consulta cancelada com sucesso</response>
+            <response code="400">Não é possível cancelar a consulta</response>
+            <response code="404">Consulta não encontrada</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.ConsultasController.Realizar(System.Int32)">
+            <summary>
+            Marca uma consulta como realizada
+            </summary>
+            <param name="id">ID da consulta</param>
+            <returns>Consulta realizada</returns>
+            <response code="200">Consulta marcada como realizada com sucesso</response>
+            <response code="400">Não é possível realizar a consulta</response>
+            <response code="404">Consulta não encontrada</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.ConsultasController.Reagendar(System.Int32,Cp1.Application.DTOs.ReagendarConsultaDto)">
+            <summary>
+            Reagenda uma consulta agendada
+            </summary>
+            <param name="id">ID da consulta</param>
+            <param name="reagendarDto">Nova data/hora da consulta</param>
+            <returns>Consulta reagendada</returns>
+            <response code="200">Consulta reagendada com sucesso</response>
+            <response code="400">Não é possível reagendar a consulta</response>
+            <response code="404">Consulta não encontrada</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.PacientesController.GetAll">
+            <summary>
+            Lista todos os pacientes
+            </summary>
+            <returns>Lista de pacientes</returns>
+            <response code="200">Retorna a lista de pacientes</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.PacientesController.GetById(System.Int32)">
+            <summary>
+            Busca um paciente por ID
+            </summary>
+            <param name="id">ID do paciente</param>
+            <returns>Dados do paciente</returns>
+            <response code="200">Retorna o paciente encontrado</response>
+            <response code="404">Paciente não encontrado</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.PacientesController.Create(Cp1.Application.DTOs.CreatePacienteDto)">
+            <summary>
+            Cria um novo paciente
+            </summary>
+            <param name="createDto">Dados do paciente</param>
+            <returns>Paciente criado</returns>
+            <response code="201">Paciente criado com sucesso</response>
+            <response code="400">Dados inválidos</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.PacientesController.Update(System.Int32,Cp1.Application.DTOs.UpdatePacienteDto)">
+            <summary>
+            Atualiza um paciente existente
+            </summary>
+            <param name="id">ID do paciente</param>
+            <param name="updateDto">Dados atualizados do paciente</param>
+            <returns>Paciente atualizado</returns>
+            <response code="200">Paciente atualizado com sucesso</response>
+            <response code="400">Dados inválidos</response>
+            <response code="404">Paciente não encontrado</response>
+        </member>
+        <member name="M:Cp1.Presentation.Controllers.PacientesController.Delete(System.Int32)">
+            <summary>
+            Exclui um paciente
+            </summary>
+            <param name="id">ID do paciente</param>
+            <returns>Sem conteúdo</returns>
+            <response code="204">Paciente excluído com sucesso</response>
+            <response code="400">Não é possível excluir paciente com consultas</response>
+            <response code="404">Paciente não encontrado</response>
+        </member>
+    </members>
+</doc>
