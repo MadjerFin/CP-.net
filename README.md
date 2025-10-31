@@ -31,7 +31,7 @@ O sistema tem como objetivo gerenciar consultas médicas de forma eficiente, per
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **.NET 9.0** - Framework principal
+* **.NET 8.0** - Framework principal
 * **ASP.NET Core** - Para criação da API RESTful
 * **Entity Framework Core 8.0** - ORM para acesso a dados
 * **Oracle Database** - Banco de dados (via Oracle.EntityFrameworkCore)
